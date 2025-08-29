@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr" id="htmlLang">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrypTsTream - Services d'Abonnement Premium</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="logo">Cryp<span>Ts</span>Tream</div>
+
+    <div class="language-toggle">
+        <button id="langBtn" onclick="toggleLanguage()">
+            <i class="fas fa-globe"></i>
+            <span id="langText">EN</span>
+        </button>
+    </div>
+    <div class="theme-toggle">
+    <button id="themeBtn" onclick="toggleTheme()" title="Basculer le thème">
+        <i id="themeIcon" class="fas fa-moon"></i>
+    </button>
+</div>
+
+    <div class="floating-elements">
+    <!-- Musique -->
+    
+    <div class="floating-element" style="top: 20%; left: 08%; font-size: 2.4rem;">🎶</div>
+    <div class="floating-element" style="top: 40%; right: 20%; font-size: 2.5rem;">🎧</div>
+    
+
+    <!-- Vidéo / Streaming -->
+    <div class="floating-element" style="top: 30%; left: 50%; font-size: 3rem;">🎬</div>
+    
+
+    <!-- Crypto -->
+    <div class="floating-element" style="top: 50%; left: 5%; font-size: 2rem;">₿</div>
+    
+
+    <!-- Gaming -->
+    <div class="floating-element" style="bottom: 20%; right: 10%; font-size: 3.5rem;">🎮</div>
+    
+</div>
+    <section class="hero">
+    <div class="hero-content">
+        <h1 data-fr="Services Premium à Portée de Main" data-en="Premium Services at Your Fingertips">Services Premium à Portée de Main</h1>
+        <p data-fr="Abonnez-vous aux meilleurs services de streaming, crypto et gaming" data-en="Subscribe to the best streaming, crypto and gaming services">Abonnez-vous aux meilleurs services de streaming, crypto et gaming</p>
+        <div class="button-group">
+            <a href="#services" class="cta-button" data-fr="Nos Services" data-en="Our Services">Nos Services</a>
+            <a href="https://wa.me/2290146621952" class="cta-button secondary-cta" target="_blank" data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</a>
+        </div>
+    </div>
+    <div class="hero-image"></div>
+    <button class="cart-btn" onclick="openCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+</section>
+
+
+    <div class="container">
+        
+        <!-- Services Section -->
+
+        <section id="services" class="services">
+    <h2 data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
+    
+    <!-- Statistics Section -->
+    <div class="statistics">
+        <div class="stat-item">
+            <div class="stat-number" id="totalCustomers">5000+</div>
+            <div class="stat-label" data-fr="Clients satisfaits" data-en="Happy Customers">Clients satisfaits</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="totalOrders">12000+</div>
+            <div class="stat-label" data-fr="Commandes traitées" data-en="Orders Processed">Commandes traitées</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="activeNow">25+</div>
+            <div class="stat-label" data-fr="Achats en cours" data-en="Active Purchases">Achats en cours</div>
+        </div>
+    </div>
+    
+    <div class="service-category"> 
+        <h3 data-fr="Musique" data-en="Music">Musique</h3>
+        <div class="service-grid">
+
+            <!-- Spotify -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" width="40">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Spotify Premium</h4>
+                    <p class="service-price">2500XOF/mois</p>
+                    <div class="purchase-indicator" data-service="Spotify Premium">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="8" data-max="18">0</span> personnes achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="add-to-cart-btn" onclick="quickAddToCart('Spotify Premium', '2500XOF/mois')">+</button>
+                    <button class="subscribe-btn" data-fr="S'abonner" data-en="Subscribe" onclick="openSubscription('Spotify Premium', '2500XOF/mois', 'Music')">S'abonner</button>
+                </div>
+            </div>
+
+            <!-- Apple Music -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Music" width="40">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Apple Music</h4>
+                    <p class="service-price">1200XOF/mois</p>
+                    <div class="purchase-indicator" data-service="Apple Music">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="5" data-max="15">0</span> personnes achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="add-to-cart-btn" onclick="quickAddToCart('Apple Music', '1200XOF/mois')">+</button>
+                    <button class="subscribe-btn" data-fr="S'abonner" data-en="Subscribe" onclick="openSubscription('Apple Music', '1200XOF/mois', 'Music')">S'abonner</button>
+                </div>
+            </div>
+
+            <!-- Deezer -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://cdn-files.dzcdn.net/img/common/og-deezer-logo.png" alt="Deezer">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Deezer Premium</h4>
+                    <p class="service-price">1000XOF/mois</p>
+                    <div class="purchase-indicator" data-service="Deezer Premium">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="6" data-max="14">0</span> personnes achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="add-to-cart-btn" onclick="quickAddToCart('Deezer Premium', '1000XOF/mois')">+</button>
+                    <button class="subscribe-btn" data-fr="S'abonner" data-en="Subscribe" onclick="openSubscription('Deezer Premium', '1000XOF/mois', 'Music')">S'abonner</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="service-category">
+        <h3 data-fr="Vidéo & Streaming" data-en="Video & Streaming">Vidéo & Streaming</h3>
+        <div class="service-grid">
+
+            <!-- Netflix -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" width="70">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Netflix Premium</h4>
+                    <p class="service-price">3000XOF/mois</p>
+                    <div class="purchase-indicator" data-service="Netflix Premium">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="12" data-max="25">0</span> personnes achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="add-to-cart-btn" onclick="quickAddToCart('Netflix Premium', '3000XOF/mois')">+</button>
+                    <button class="subscribe-btn" data-fr="S'abonner" data-en="Subscribe" onclick="openSubscription('Netflix Premium', '3000XOF/mois', 'Video & Streaming')">S'abonner</button>
+                </div>
+            </div>
+
+            <!-- Disney+ -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Disney+" width="70">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Disney+ Premium</h4>
+                    <p class="service-price">1500XOF/mois</p>
+                    <div class="purchase-indicator" data-service="Disney+ Premium">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="10" data-max="20">0</span> personnes achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="add-to-cart-btn" onclick="quickAddToCart('Disney+ Premium', '1500XOF/mois')">+</button>
+                    <button class="subscribe-btn" data-fr="S'abonner" data-en="Subscribe" onclick="openSubscription('Disney+ Premium', '1500XOF/mois', 'Video & Streaming')">S'abonner</button>
+                </div>
+            </div>
+
+            <!-- Amazon Prime Video -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Prime Video" width="70">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Amazon Prime Vidéo</h4>
+                    <p class="service-price">1500XOF/mois</p>
+                    <div class="purchase-indicator" data-service="Amazon Prime Video">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="9" data-max="19">0</span> personnes achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="add-to-cart-btn" onclick="quickAddToCart('Amazon Prime Vidéo', '1500XOF/mois')">+</button>
+                    <button class="subscribe-btn" data-fr="S'abonner" data-en="Subscribe" onclick="openSubscription('Amazon Prime Vidéo', '1500XOF/mois', 'Video & Streaming')">S'abonner</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="service-category">
+        <h3 data-fr="Services Crypto" data-en="Crypto Services">Services Crypto</h3>
+        <div class="service-grid">
+            <div class="service-item">
+                <div class="service-image"><i class="fas fa-dollar-sign"></i></div>
+                <div class="service-details">
+                    <h4 class="service-name" data-fr="Achat/Vente USDT" data-en="Buy/Sell USDT">Achat/Vente USDT</h4>
+                    <p class="service-price" data-fr="Taux du jour" data-en="Daily rate">Taux du jour</p>
+                    <div class="purchase-indicator" data-service="Achat/Vente USDT">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="15" data-max="30">0</span> transactions aujourd'hui
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="order-btn" data-fr="Commander" data-en="Order" onclick="openSubscription('Achat/Vente USDT', 'Taux du jour', 'Crypto Services')">Commander</button>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-image"><i class="fab fa-btc"></i></div>
+                <div class="service-details">
+                    <h4 class="service-name" data-fr="Achat/Vente BTC" data-en="Buy/Sell BTC">Achat/Vente BTC</h4>
+                    <p class="service-price" data-fr="Taux du jour" data-en="Daily rate">Taux du jour</p>
+                    <div class="purchase-indicator" data-service="Achat/Vente BTC">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="8" data-max="20">0</span> transactions aujourd'hui
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="order-btn" data-fr="Commander" data-en="Order" onclick="openSubscription('Achat/Vente BTC', 'Taux du jour', 'Crypto Services')">Commander</button>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-image"><i class="fab fa-ethereum"></i></div>
+                <div class="service-details">
+                    <h4 class="service-name" data-fr="Achat/Vente ETH" data-en="Buy/Sell ETH">Achat/Vente ETH</h4>
+                    <p class="service-price" data-fr="Taux du jour" data-en="Daily rate">Taux du jour</p>
+                    <div class="purchase-indicator" data-service="Achat/Vente ETH">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="7" data-max="18">0</span> transactions aujourd'hui
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="order-btn" data-fr="Commander" data-en="Order" onclick="openSubscription('Achat/Vente ETH', 'Taux du jour', 'Crypto Services')">Commander</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="service-category">
+        <h3 data-fr="Gaming" data-en="Gaming">Gaming</h3>
+        <div class="service-grid">
+
+            <!-- Call of Duty Mobile -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Call_of_Duty_Mobile_Logo.png" alt="Call of Duty Mobile" width="70">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Call of Duty Mobile</h4>
+                    <p class="service-price" data-fr="Variable" data-en="Variable">Variable</p>
+                    <div class="purchase-indicator" data-service="Call of Duty Mobile">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="5" data-max="15">0</span> joueurs achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="order-btn" data-fr="Commander" data-en="Order" onclick="openSubscription('Call of Duty Mobile', 'Variable', 'Gaming')">Commander</button>
+                </div>
+            </div>
+
+            <!-- Free Fire -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Logo_of_Garena_Free_Fire.png/2560px-Logo_of_Garena_Free_Fire.png" alt="Free Fire" width="70">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Free Fire</h4>
+                    <p class="service-price" data-fr="Variable" data-en="Variable">Variable</p>
+                    <div class="purchase-indicator" data-service="Free Fire">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="7" data-max="17">0</span> joueurs achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="order-btn" data-fr="Commander" data-en="Order" onclick="openSubscription('Free Fire', 'Variable', 'Gaming')">Commander</button>
+                </div>
+            </div>
+
+            <!-- Nintendo Mobile -->
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo.svg" alt="Nintendo Mobile" width="70">
+                </div>
+                <div class="service-details">
+                    <h4 class="service-name">Nintendo Mobile</h4>
+                    <p class="service-price" data-fr="Variable" data-en="Variable">Variable</p>
+                    <div class="purchase-indicator" data-service="Nintendo Mobile">
+                        <i class="fas fa-users"></i>
+                        <span class="purchase-count" data-min="4" data-max="12">0</span> joueurs achètent maintenant
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="order-btn" data-fr="Commander" data-en="Order" onclick="openSubscription('Nintendo Mobile', 'Variable', 'Gaming')">Commander</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    </div>
+
+    <div id="subscriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('subscriptionModal')">&times;</span>
+            <h2 data-fr="Formulaire d'Abonnement" data-en="Subscription Form">Formulaire d'Abonnement</h2>
+            <form id="subscriptionForm">
+                <div class="form-group">
+                    <label data-fr="Service sélectionné:" data-en="Selected service:">Service sélectionné:</label>
+                    <input type="text" id="serviceName" name="serviceName" readonly>
+                </div>
+                <div class="form-group">
+                    <label data-fr="Prix:" data-en="Price:">Prix:</label>
+                    <input type="text" id="servicePrice" name="servicePrice" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="fullName" data-fr="Nom complet *:" data-en="Full name *:">Nom complet *:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-fr="Email:" data-en="Email:">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-fr="Téléphone *:" data-en="Phone *:" style="margin-top: 0;">Téléphone *:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration" data-fr="Durée d'abonnement:" data-en="Subscription duration:">Durée d'abonnement:</label>
+                    <select id="duration" name="duration">
+                        <option value="1 mois" data-fr="1 mois" data-en="1 month">1 mois</option>
+                        <option value="3 mois" data-fr="3 mois" data-en="3 months">3 mois</option>
+                        <option value="6 mois" data-fr="6 mois" data-en="6 months">6 mois</option>
+                        <option value="12 mois" data-fr="12 mois" data-en="12 months">12 mois</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message" data-fr="Message (optionnel):" data-en="Message (optional):">Message (optionnel):</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Informations supplémentaires..."></textarea>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="button" class="subscribe-btn" onclick="addToCart()" style="flex: 1; padding: 1rem;">
+                        <span data-fr="Ajouter au Panier" data-en="Add to Cart">Ajouter au Panier</span>
+                    </button>
+                    <button type="submit" class="submit-btn" style="flex: 1;">
+                        <span data-fr="Commander Maintenant" data-en="Order Now">Commander Maintenant</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+<div class="modal order-all-modal" id="orderAllModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('orderAllModal')">&times;</span>
+        <h2 data-fr="Commande Groupée" data-en="Bulk Order">Commande Groupée</h2>
+        <form id="orderAllForm">
+            <div class="form-group">
+                <label for="orderFullName" data-fr="Nom complet *:" data-en="Full name *:">Nom complet *:</label>
+                <input type="text" id="orderFullName" name="orderFullName" required>
+            </div>
+            <div class="form-group">
+                <label for="orderEmail" data-fr="Email:" data-en="Email:">Email:</label>
+                <input type="email" id="orderEmail" name="orderEmail">
+            </div>
+            <div class="form-group">
+                <label for="orderPhone" data-fr="Téléphone *:" data-en="Phone *:">Téléphone *:</label>
+                <input type="tel" id="orderPhone" name="orderPhone" required>
+            </div>
+            <div class="form-group">
+                <label for="orderMessage" data-fr="Message (optionnel):" data-en="Message (optional):">Message (optionnel):</label>
+                <textarea id="orderMessage" name="orderMessage" rows="3" placeholder="Informations supplémentaires..."></textarea>
+            </div>
+            <div class="order-summary" id="orderSummary">
+                <h3 data-fr="Récapitulatif de la commande" data-en="Order Summary">Récapitulatif de la commande</h3>
+                <div id="orderItemsList"></div>
+                <div class="order-total" id="orderTotal">Total: 0XOF</div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="submit-btn" onclick="generateBulkOrderPDF()">
+                    <i class="fas fa-file-pdf"></i>
+                    <span data-fr="Générer PDF et Commander" data-en="Generate PDF and Order">Générer PDF et Commander</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+    <div class="modal cart-modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('cartModal')">&times;</span>
+            <h2 data-fr="Mon Panier" data-en="My Cart">Mon Panier</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total" id="cartTotal">Total: 0XOF</div>
+            <div class="cart-actions">
+                <button class="submit-btn" onclick="orderAll()">
+                    <span data-fr="Commander Tout" data-en="Order All">Commander Tout</span>
+                </button>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+<section id="faq" class="faq-section">
+    <h2 data-fr="FAQ - Questions Fréquentes" data-en="FAQ - Frequently Asked Questions">
+        FAQ - Questions Fréquentes
+    </h2>
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <h3 data-fr="Comment puis-je m'abonner ?" data-en="How can I subscribe?">
+                Comment puis-je m'abonner ?
+            </h3>
+            <p data-fr="Cliquez simplement sur le bouton 'S'abonner' ou 'Commander' selon le service, remplissez le formulaire et confirmez votre commande." 
+               data-en="Simply click on the 'Subscribe' or 'Order' button for the service, fill in the form and confirm your order.">
+               Cliquez simplement sur le bouton "S'abonner" ou "Commander" selon le service, remplissez le formulaire et confirmez votre commande.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-fr="Quels moyens de paiement acceptez-vous ?" data-en="Which payment methods do you accept?">
+                Quels moyens de paiement acceptez-vous ?
+            </h3>
+            <p data-fr="Nous acceptons les paiements en crypto (USDT, BTC, ETH) et mobile money selon votre région." 
+               data-en="We accept payments in crypto (USDT, BTC, ETH) and mobile money depending on your region.">
+               Nous acceptons les paiements en crypto (USDT, BTC, ETH) et mobile money selon votre région.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-fr="Quand vais-je recevoir mon abonnement ?" data-en="When will I receive my subscription?">
+                Quand vais-je recevoir mon abonnement ?
+            </h3>
+            <p data-fr="Après confirmation du paiement, vous recevrez votre abonnement sous 24h maximum." 
+               data-en="After payment confirmation, you will receive your subscription within 24h maximum.">
+               Après confirmation du paiement, vous recevrez votre abonnement sous 24h maximum.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3 data-fr="Est-ce que les abonnements sont renouvelables ?" data-en="Are subscriptions renewable?">
+                Est-ce que les abonnements sont renouvelables ?
+            </h3>
+            <p data-fr="Oui, vous pouvez renouveler ou prolonger la durée de votre abonnement directement depuis votre espace client." 
+               data-en="Yes, you can renew or extend your subscription directly from your client area.">
+               Oui, vous pouvez renouveler ou prolonger la durée de votre abonnement directement depuis votre espace client.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h3>CrypTsTream</h3>
+            <p data-fr="Vos services premium au meilleur prix : streaming, musique, gaming et crypto." 
+               data-en="Your premium services at the best price: streaming, music, gaming and crypto.">
+               Vos services premium au meilleur prix : streaming, musique, gaming et crypto.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h4 data-fr="Liens Rapides" data-en="Quick Links">Liens Rapides</h4>
+            <ul>
+                <li><a href="#services" data-fr="Nos Services" data-en="Our Services">Nos Services</a></li>
+                <li><a href="#faq" data-fr="FAQ" data-en="FAQ">FAQ</a></li>
+                <li><a href="https://wa.me/2290146621952" target="_blank" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-social">
+            <h4 data-fr="Suivez-nous" data-en="Follow Us">Suivez-nous</h4>
+            <div class="social-icons">
+                <a href="https://wa.me/2290146621952" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 CrypTsTream. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+    
+</body>
+</html>
+
+echo "# CrypTsTream.github.io" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/CrypTsTream/CrypTsTream.github.io.git
+git push -u origin main
