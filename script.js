@@ -1,101 +1,310 @@
         // Global variables
-        let cart = [];
-        let currentService = {};
-        let currentLanguage = 'fr';
-        let customerInfo = {};
+let cart = [];
+let currentService = {};
+let currentLanguage = 'fr';
+let customerInfo = {};
 
-        // Language translations
-        const translations = {
-            fr: {
-                'Premium Services at Your Fingertips': 'Services Premium à Portée de Main',
-                'Subscribe to the best streaming, crypto and gaming services': 'Abonnez-vous aux meilleurs services de streaming, crypto et gaming',
-                'Our Services': 'Nos Services',
-                'Music': 'Musique',
-                'Video & Streaming': 'Vidéo & Streaming',
-                'Crypto Services': 'Services Crypto',
-                'Gaming': 'Gaming',
-                'Buy/Sell USDT': 'Achat/Vente USDT',
-                'Buy/Sell BTC': 'Achat/Vente BTC',
-                'Buy/Sell ETH': 'Achat/Vente ETH',
-                'Daily rate': 'Taux du jour',
-                'Variable': 'Variable',
-                'Subscribe': 'S\'abonner',
-                'Order': 'Commander',
-                'Contact Us': 'Contactez-nous',
-                'Cart': 'Panier',
-                'Subscription Form': 'Formulaire d\'Abonnement',
-                'Selected service:': 'Service sélectionné:',
-                'Price:': 'Prix:',
-                'Full name *:': 'Nom complet *:',
-                'Phone *:': 'Téléphone *:',
-                'Subscription duration:': 'Durée d\'abonnement:',
-                'Message (optional):': 'Message (optionnel):',
-                'Additional information...': 'Informations supplémentaires...',
-                'Add to Cart': 'Ajouter au Panier',
-                'Order Now': 'Commander Maintenant',
-                'My Cart': 'Mon Panier',
-                'Order All': 'Commander Tout',
-                'Download PDF': 'Télécharger PDF',
-                '1 month': '1 mois',
-                '3 months': '3 mois',
-                '6 months': '6 mois',
-                '12 months': '12 mois'
-            },
-            en: {
-                'Services Premium à Portée de Main': 'Premium Services at Your Fingertips',
-                'Abonnez-vous aux meilleurs services de streaming, crypto and gaming': 'Subscribe to the best streaming, crypto and gaming services',
-                'Nos Services': 'Our Services',
-                'Musique': 'Music',
-                'Vidéo & Streaming': 'Video & Streaming',
-                'Services Crypto': 'Crypto Services',
-                'Gaming': 'Gaming',
-                'Achat/Vente USDT': 'Buy/Sell USDT',
-                'Achat/Vente BTC': 'Buy/Sell BTC',
-                'Achat/Vente ETH': 'Buy/Sell ETH',
-                'Taux du jour': 'Daily rate',
-                'Variable': 'Variable',
-                'S\'abonner': 'Subscribe',
-                'Commander': 'Order',
-                'Contactez-nous': 'Contact Us',
-                'Panier': 'Cart',
-                'Formulaire d\'Abonnement': 'Subscription Form',
-                'Service sélectionné:': 'Selected service:',
-                'Prix:': 'Price:',
-                'Nom complet *:': 'Full name *:',
-                'Téléphone *:': 'Phone *:',
-                'Durée d\'abonnement:': 'Subscription duration:',
-                'Message (optionnel):': 'Message (optional):',
-                'Informations supplémentaires...': 'Additional information...',
-                'Ajouter au Panier': 'Add to Cart',
-                'Commander Maintenant': 'Order Now',
-                'Mon Panier': 'My Cart',
-                'Commander Tout': 'Order All',
-                'Télécharger PDF': 'Download PDF',
-                '1 mois': '1 month',
-                '3 mois': '3 months',
-                '6 mois': '6 months',
-                '12 mois': '12 months'
-            }
-        };
+// Language translations
+const translations = {
+    fr: {
+        // Hero section
+        'Premium Services at Your Fingertips': 'Services Premium à Portée de Main',
+        'Subscribe to the best streaming, crypto and gaming services': 'Abonnez-vous aux meilleurs services de streaming, crypto et gaming',
+        
+        // Services section
+        'Our Services': 'Nos Services',
+        'Music': 'Musique',
+        'Video & Streaming': 'Vidéo & Streaming',
+        'Crypto Services': 'Services Crypto',
+        'Gaming': 'Gaming',
+        
+        // Service names
+        'Buy/Sell USDT': 'Achat/Vente USDT',
+        'Buy/Sell BTC': 'Achat/Vente BTC',
+        'Buy/Sell ETH': 'Achat/Vente ETH',
+        'Daily rate': 'Taux du jour',
+        'Variable': 'Variable',
+        
+        // Buttons
+        'Subscribe': 'S\'abonner',
+        'Order': 'Commander',
+        'Contact Us': 'Contactez-nous',
+        'Cart': 'Panier',
+        
+        // Modal forms
+        'Subscription Form': 'Formulaire d\'Abonnement',
+        'Selected service:': 'Service sélectionné:',
+        'Price:': 'Prix:',
+        'Full name *:': 'Nom complet *:',
+        'Phone *:': 'Téléphone *:',
+        'Subscription duration:': 'Durée d\'abonnement:',
+        'Message (optional):': 'Message (optionnel):',
+        'Additional information...': 'Informations supplémentaires...',
+        'Add to Cart': 'Ajouter au Panier',
+        'Order Now': 'Commander Maintenant',
+        'My Cart': 'Mon Panier',
+        'Order All': 'Commander Tout',
+        'Download PDF': 'Télécharger PDF',
+        
+        // Duration options
+        '1 month': '1 mois',
+        '3 months': '3 mois',
+        '6 months': '6 mois',
+        '12 months': '12 mois',
+        
+        // Statistics
+        'Happy Customers': 'Clients satisfaits',
+        'Orders Processed': 'Commandes traitées',
+        'Active Purchases': 'Achats en cours',
+        
+        // Purchase indicators
+        'people are buying now': 'personnes achètent maintenant',
+        'transactions today': 'transactions aujourd\'hui',
+        'players are buying now': 'joueurs achètent maintenant',
+        
+        // Cart and orders
+        'Your cart is empty': 'Votre panier est vide',
+        'Total:': 'Total:',
+        
+        // Order modal
+        'Bulk Order': 'Commande Groupée',
+        'Order Summary': 'Récapitulatif de la commande',
+        'Generate PDF and Order': 'Générer PDF et Commander',
+        
+        // FAQ section
+        'FAQ - Frequently Asked Questions': 'FAQ - Questions Fréquentes',
+        'How can I subscribe?': 'Comment puis-je m\'abonner ?',
+        'Which payment methods do you accept?': 'Quels moyens de paiement acceptez-vous ?',
+        'When will I receive my subscription?': 'Quand vais-je recevoir mon abonnement ?',
+        'Are subscriptions renewable?': 'Est-ce que les abonnements sont renouvelables ?',
+        
+        // Footer
+        'Quick Links': 'Liens Rapides',
+        'Follow Us': 'Suivez-nous',
+        
+        // Toast messages
+        'Your cart is empty!': 'Votre panier est vide!',
+        'Please fill all required fields.': 'Veuillez remplir tous les champs obligatoires.',
+        
+        // Customer information
+        'Customer information:': 'Informations client:',
+        'Name:': 'Nom:',
+        'Email:': 'Email:',
+        'Message:': 'Message:',
+        'Order date:': 'Date de commande:',
+        
+        // Order summary
+        'Order details:': 'Détails de la commande:',
+        
+        // WhatsApp messages
+        'Hello, I would like to order the following services:': 'Bonjour, je souhaite commander les services suivants:',
+        'I have attached a PDF with my order details.': 'J\'ai joint un PDF avec les détails de ma commande.',
+        // Prix et services
+        '/mois': '/mois',
+        'XOF': 'XOF',
+        'Taux du jour': 'Taux du jour',
+        'Variable': 'Variable',
+        
+        // Noms de services
+        'Spotify Premium': 'Spotify Premium',
+        'Apple Music': 'Apple Music',
+        'Deezer Premium': 'Deezer Premium',
+        'Netflix Premium': 'Netflix Premium',
+        'Disney+ Premium': 'Disney+ Premium',
+        'Amazon Prime Vidéo': 'Amazon Prime Vidéo',
+        'Call of Duty Mobile': 'Call of Duty Mobile',
+        'Free Fire': 'Free Fire',
+        'Nintendo Mobile': 'Nintendo Mobile'
+    },
+    en: {
+        // Hero section
+        'Services Premium à Portée de Main': 'Premium Services at Your Fingertips',
+        'Abonnez-vous aux meilleurs services de streaming, crypto and gaming': 'Subscribe to the best streaming, crypto and gaming services',
+        
+        // Services section
+        'Nos Services': 'Our Services',
+        'Musique': 'Music',
+        'Vidéo & Streaming': 'Video & Streaming',
+        'Services Crypto': 'Crypto Services',
+        'Gaming': 'Gaming',
+        
+        // Service names
+        'Achat/Vente USDT': 'Buy/Sell USDT',
+        'Achat/Vente BTC': 'Buy/Sell BTC',
+        'Achat/Vente ETH': 'Buy/Sell ETH',
+        'Taux du jour': 'Daily rate',
+        'Variable': 'Variable',
+        
+        // Buttons
+        'S\'abonner': 'Subscribe',
+        'Commander': 'Order',
+        'Contactez-nous': 'Contact Us',
+        'Panier': 'Cart',
+        
+        // Modal forms
+        'Formulaire d\'Abonnement': 'Subscription Form',
+        'Service sélectionné:': 'Selected service:',
+        'Prix:': 'Price:',
+        'Nom complet *:': 'Full name *:',
+        'Téléphone *:': 'Phone *:',
+        'Durée d\'abonnement:': 'Subscription duration:',
+        'Message (optionnel):': 'Message (optional):',
+        'Informations supplémentaires...': 'Additional information...',
+        'Ajouter au Panier': 'Add to Cart',
+        'Commander Maintenant': 'Order Now',
+        'Mon Panier': 'My Cart',
+        'Commander Tout': 'Order All',
+        'Télécharger PDF': 'Download PDF',
+        
+        // Duration options
+        '1 mois': '1 month',
+        '3 mois': '3 months',
+        '6 mois': '6 months',
+        '12 mois': '12 months',
+        
+        // Statistics
+        'Clients satisfaits': 'Happy Customers',
+        'Commandes traitées': 'Orders Processed',
+        'Achats en cours': 'Active Purchases',
+        
+        // Purchase indicators
+        'personnes achètent maintenant': 'people are buying now',
+        'transactions aujourd\'hui': 'transactions today',
+        'joueurs achètent maintenant': 'players are buying now',
+        
+        // Cart and orders
+        'Votre panier est vide': 'Your cart is empty',
+        'Total:': 'Total:',
+        
+        // Order modal
+        'Commande Groupée': 'Bulk Order',
+        'Récapitulatif de la commande': 'Order Summary',
+        'Générer PDF et Commander': 'Generate PDF and Order',
+        
+        // FAQ section
+        'FAQ - Questions Fréquentes': 'FAQ - Frequently Asked Questions',
+        'Comment puis-je m\'abonner ?': 'How can I subscribe?',
+        'Quels moyens de paiement acceptez-vous ?': 'Which payment methods do you accept?',
+        'Quand vais-je recevoir mon abonnement ?': 'When will I receive my subscription?',
+        'Est-ce que les abonnements sont renouvelables ?': 'Are subscriptions renewable?',
+        
+        // Footer
+        'Liens Rapides': 'Quick Links',
+        'Suivez-nous': 'Follow Us',
+        
+        // Toast messages
+        'Votre panier est vide!': 'Your cart is empty!',
+        'Veuillez remplir tous les champs obligatoires.': 'Please fill all required fields.',
+        
+        // Customer information
+        'Informations client:': 'Customer information:',
+        'Nom:': 'Name:',
+        'Email:': 'Email:',
+        'Message:': 'Message:',
+        'Date de commande:': 'Order date:',
+        
+        // Order summary
+        'Détails de la commande:': 'Order details:',
+        
+        // WhatsApp messages
+        'Bonjour, je souhaite commander les services suivants:': 'Hello, I would like to order the following services:',
+        'J\'ai joint un PDF avec les détails de ma commande.': 'I have attached a PDF with my order details.',
+        // Prix et services
+        '/mois': '/month',
+        'XOF': 'XOF',
+        'Taux du jour': 'Daily rate',
+        'Variable': 'Variable',
+        
+        // Noms de services
+        'Spotify Premium': 'Spotify Premium',
+        'Apple Music': 'Apple Music',
+        'Deezer Premium': 'Deezer Premium',
+        'Netflix Premium': 'Netflix Premium',
+        'Disney+ Premium': 'Disney+ Premium',
+        'Amazon Prime Vidéo': 'Amazon Prime Video',
+        'Call of Duty Mobile': 'Call of Duty Mobile',
+        'Free Fire': 'Free Fire',
+        'Nintendo Mobile': 'Nintendo Mobile'
+    }
+};
 
-        // Language toggle functionality
-        function toggleLanguage() {
-            currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
-            document.getElementById('langText').textContent = currentLanguage.toUpperCase();
-            document.getElementById('htmlLang').setAttribute('lang', currentLanguage);
-            
-            // Update all translatable elements
-            document.querySelectorAll('[data-fr]').forEach(element => {
-                const key = element.getAttribute(`data-${currentLanguage === 'fr' ? 'en' : 'fr'}`);
-                if (translations[currentLanguage][key]) {
-                    element.textContent = translations[currentLanguage][key];
-                }
-            });
-            
-            // Update cart display
-            updateCartDisplay();
+        // Fonction toggleLanguage mise à jour
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+    document.getElementById('langText').textContent = currentLanguage.toUpperCase();
+    document.getElementById('htmlLang').setAttribute('lang', currentLanguage);
+    
+    // Mettre à jour tous les éléments traduisibles
+    document.querySelectorAll('[data-fr]').forEach(element => {
+        const frText = element.getAttribute('data-fr');
+        const enText = element.getAttribute('data-en');
+        
+        if (currentLanguage === 'fr' && frText) {
+            element.textContent = frText;
+        } else if (currentLanguage === 'en' && enText) {
+            element.textContent = enText;
         }
+    });
+    
+    // Mettre à jour les traductions spéciales
+    updateSpecialTranslations();
+    
+    // Mettre à jour les prix
+    updatePricesLanguage();
+    
+    // Mettre à jour les éléments du panier avec la nouvelle langue
+    updateCartItemsLanguage();
+    
+    // Mettre à jour les badges populaires
+    updatePopularBadgesLanguage();
+}
 
+// Nouvelle fonction pour mettre à jour la langue des éléments du panier
+function updateCartItemsLanguage() {
+    cart.forEach(item => {
+        // Mettre à jour le nom du service
+        if (item.service.originalName) {
+            item.service.name = translateText(item.service.originalName);
+        }
+        
+        // Mettre à jour le prix
+        if (item.service.originalPrice) {
+            item.service.price = translatePrice(item.service.originalPrice);
+        }
+        
+        // Mettre à jour la durée
+        item.duration = translateDuration(item.duration);
+    });
+    
+    // Rafraîchir l'affichage du panier
+    updateCartDisplay();
+}
+
+// Nouvelle fonction pour gérer les traductions spéciales
+function updateSpecialTranslations() {
+    // Traduction des placeholders
+    const messageTextarea = document.getElementById('message');
+    if (messageTextarea) {
+        const placeholder = currentLanguage === 'fr' 
+            ? 'Informations supplémentaires...' 
+            : 'Additional information...';
+        messageTextarea.setAttribute('placeholder', placeholder);
+    }
+    
+    const orderMessageTextarea = document.getElementById('orderMessage');
+    if (orderMessageTextarea) {
+        const placeholder = currentLanguage === 'fr' 
+            ? 'Informations supplémentaires...' 
+            : 'Additional information...';
+        orderMessageTextarea.setAttribute('placeholder', placeholder);
+    }
+    
+    // Traduction du titre de la page
+    const title = currentLanguage === 'fr' 
+        ? 'CrypTsTream - Services d\'Abonnement Premium'
+        : 'CrypTsTream - Premium Subscription Services';
+    document.title = title;
+}
         // Modal functions
         function openSubscription(serviceName, servicePrice, serviceCategory) {
             currentService = {
@@ -121,86 +330,106 @@
 
         // Cart functionality
         function quickAddToCart(serviceName, servicePrice) {
-            currentService = {
-                name: serviceName,
-                price: servicePrice,
-                category: 'Quick Add'
-            };
-            
-            // Add to cart with default values
-            cart.push({
-                service: currentService,
-                duration: '1 mois',
-                customer: {}
-            });
-            
-            updateCartCount();
-            showToast(`${serviceName} a été ajouté au panier!`, 'success');
-
-        }
+    currentService = {
+        name: serviceName,
+        price: servicePrice,
+        category: 'Quick Add'
+    };
+    
+    // Traduire le nom du service et le prix selon la langue actuelle
+    const translatedName = translateText(serviceName);
+    const translatedPrice = translatePrice(servicePrice);
+    
+    // Add to cart avec les versions traduites
+    cart.push({
+        service: {
+            ...currentService,
+            name: translatedName,
+            price: translatedPrice,
+            originalName: serviceName, // Conserver le nom original
+            originalPrice: servicePrice // Conserver le prix original
+        },
+        duration: translateDuration('1 mois'),
+        customer: {}
+    });
+    
+    updateCartCount();
+    showToast(`${translatedName} a été ajouté au panier!`, 'success');
+}
 
         function addToCart() {
-            const form = document.getElementById('subscriptionForm');
-            const formData = new FormData(form);
-            
-            // Store customer info for later use
-            customerInfo = {
-                fullName: formData.get('fullName'),
-                email: formData.get('email'),
-                phone: formData.get('phone')
-            };
-            
-            // Add to cart
-            cart.push({
-                service: currentService,
-                duration: formData.get('duration'),
-                message: formData.get('message'),
-                customer: customerInfo
-            });
-            
-            updateCartCount();
-            closeModal('subscriptionModal');
-            showToast(`${currentService.name} a été ajouté au panier!`, 'success');
-        }
+    const form = document.getElementById('subscriptionForm');
+    const formData = new FormData(form);
+    
+    // Store customer info for later use
+    customerInfo = {
+        fullName: formData.get('fullName'),
+        email: formData.get('email'),
+        phone: formData.get('phone')
+    };
+    
+    // Traduire le nom du service et le prix selon la langue actuelle
+    const translatedName = translateText(currentService.name);
+    const translatedPrice = translatePrice(currentService.price);
+    
+    // Add to cart avec les versions traduites
+    cart.push({
+        service: {
+            ...currentService,
+            name: translatedName,
+            price: translatedPrice,
+            originalName: currentService.name, // Conserver le nom original pour les mises à jour
+            originalPrice: currentService.price // Conserver le prix original pour les mises à jour
+        },
+        duration: translateDuration(formData.get('duration')),
+        message: formData.get('message'),
+        customer: customerInfo
+    });
+    
+    updateCartCount();
+    closeModal('subscriptionModal');
+    showToast(`${translatedName} a été ajouté au panier!`, 'success');
+}
 
         function updateCartCount() {
             document.getElementById('cartCount').textContent = cart.length;
         }
 
         function updateCartDisplay() {
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
-            
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p data-fr="Votre panier est vide" data-en="Your cart is empty">Votre panier est vide</p>';
-                cartTotal.textContent = currentLanguage === 'fr' ? 'Total: 0XOF' : 'Total: 0XOF';
-                return;
-            }
-            
-            let total = 0;
-            cartItems.innerHTML = '';
-            
-            cart.forEach((item, index) => {
-                const price = parseFloat(item.service.price) || 0;
-                total += price;
-                
-                const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <div>
-                        <h4>${item.service.name}</h4>
-                        <p>${item.service.price} - ${item.duration}</p>
-                    </div>
-                    <button class="remove-btn" onclick="removeFromCart(${index})">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                `;
-                
-                cartItems.appendChild(cartItem);
-            });
-            
-            cartTotal.textContent = currentLanguage === 'fr' ? `Total: ${total.toFixed(2)}XOF` : `Total: ${total.toFixed(2)}XOF`;
-        }
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p data-fr="Votre panier est vide" data-en="Your cart is empty">Votre panier est vide</p>';
+        cartTotal.textContent = currentLanguage === 'fr' ? 'Total: 0XOF' : 'Total: 0XOF';
+        return;
+    }
+    
+    let total = 0;
+    cartItems.innerHTML = '';
+    
+    cart.forEach((item, index) => {
+        // Extraire la valeur numérique du prix
+        const priceValue = parseFloat(item.service.price.replace(/[^0-9.]/g, '')) || 0;
+        total += priceValue;
+        
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <div>
+                <h4>${item.service.name}</h4>
+                <p>${item.service.price} - ${item.duration}</p>
+            </div>
+            <button class="remove-btn" onclick="removeFromCart(${index})">
+                <i class="fas fa-trash"></i>
+            </button>
+        `;
+        
+        cartItems.appendChild(cartItem);
+    });
+    
+    cartTotal.textContent = currentLanguage === 'fr' ? `Total: ${total.toFixed(2)}XOF` : `Total: ${total.toFixed(2)}XOF`;
+}
 
         function removeFromCart(index) {
             cart.splice(index, 1);
@@ -639,7 +868,6 @@ function updateActivePurchases() {
     }, 500);
 }
 
-// Add popular badges randomly
 function addPopularBadges() {
     const services = document.querySelectorAll('.service-item');
     const popularServices = [];
@@ -654,11 +882,30 @@ function addPopularBadges() {
     }
     
     popularServices.forEach(index => {
+        // Remove existing badge if any
+        const existingBadge = services[index].querySelector('.popular-badge');
+        if (existingBadge) {
+            existingBadge.remove();
+        }
+        
         const badge = document.createElement('div');
         badge.className = 'popular-badge';
-        badge.innerHTML = currentLanguage === 'fr' ? 'Populaire' : 'Popular';
+        badge.setAttribute('data-fr', 'Populaire');
+        badge.setAttribute('data-en', 'Popular');
+        badge.textContent = currentLanguage === 'fr' ? 'Populaire' : 'Popular';
         services[index].style.position = 'relative';
         services[index].appendChild(badge);
+    });
+}
+
+// Mettre à jour les badges populaires lors du changement de langue
+function updatePopularBadgesLanguage() {
+    document.querySelectorAll('.popular-badge').forEach(badge => {
+        if (currentLanguage === 'fr') {
+            badge.textContent = badge.getAttribute('data-fr');
+        } else {
+            badge.textContent = badge.getAttribute('data-en');
+        }
     });
 }
 
@@ -668,14 +915,28 @@ document.addEventListener('DOMContentLoaded', function() {
     initializePurchaseIndicators();
     addPopularBadges();
     
-    // Add floating chat button
+    // Ajouter le bouton de chat flottant
     const floatingChat = document.createElement('a');
     floatingChat.href = 'https://wa.me/2290146621952';
     floatingChat.target = '_blank';
     floatingChat.className = 'floating-chat';
     floatingChat.innerHTML = '<i class="fab fa-whatsapp"></i>';
     document.body.appendChild(floatingChat);
+    
+    // Mettre à jour les prix selon la langue
+    updatePricesLanguage();
 });
+
+// Fonction pour mettre à jour les prix selon la langue
+function updatePricesLanguage() {
+    document.querySelectorAll('.service-price[data-fr][data-en]').forEach(element => {
+        if (currentLanguage === 'fr') {
+            element.textContent = element.getAttribute('data-fr');
+        } else {
+            element.textContent = element.getAttribute('data-en');
+        }
+    });
+}
 // Effet de lumière qui suit la souris
 document.querySelector('.hero').addEventListener('mousemove', function(e) {
     this.style.setProperty('--mouse-x', e.clientX + 'px');
@@ -739,4 +1000,118 @@ function showToast(message, type = 'success') {
     setTimeout(() => {
         toast.classList.remove('show');
     }, 3000);
+}
+// Fonctionnalité de glisser-déposer pour le panier
+document.addEventListener('DOMContentLoaded', function() {
+    const cartContainer = document.querySelector('.cart-popup-container');
+    const cartBtn = document.querySelector('.cart-btn');
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    // Fonction pour commencer le déplacement
+    function startDrag(e) {
+        isDragging = true;
+        
+        // Gérer à la fois les événements tactiles et souris
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        
+        const rect = cartContainer.getBoundingClientRect();
+        offsetX = clientX - rect.left;
+        offsetY = clientY - rect.top;
+        
+        // Empêcher la sélection de texte et le comportement par défaut
+        e.preventDefault();
+        
+        // Ajouter les écouteurs d'événements pour le déplacement et la fin
+        document.addEventListener('mousemove', onDrag);
+        document.addEventListener('touchmove', onDrag);
+        document.addEventListener('mouseup', stopDrag);
+        document.addEventListener('touchend', stopDrag);
+        
+        // Changer le curseur pour indiquer le déplacement
+        cartBtn.style.cursor = 'grabbing';
+    }
+
+    // Fonction pendant le déplacement
+    function onDrag(e) {
+        if (!isDragging) return;
+        
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        
+        // Calculer la nouvelle position
+        let newX = clientX - offsetX;
+        let newY = clientY - offsetY;
+        
+        // Limiter la position aux bords de la fenêtre
+        const containerWidth = cartContainer.offsetWidth;
+        const containerHeight = cartContainer.offsetHeight;
+        
+        newX = Math.max(10, Math.min(window.innerWidth - containerWidth - 10, newX));
+        newY = Math.max(10, Math.min(window.innerHeight - containerHeight - 10, newY));
+        
+        // Appliquer la nouvelle position
+        cartContainer.style.position = 'fixed';
+        cartContainer.style.left = newX + 'px';
+        cartContainer.style.bottom = 'auto';
+        cartContainer.style.right = 'auto';
+        cartContainer.style.top = newY + 'px';
+    }
+
+    // Fonction pour arrêter le déplacement
+    function stopDrag() {
+        isDragging = false;
+        cartBtn.style.cursor = 'grab';
+        
+        // Supprimer les écouteurs d'événements
+        document.removeEventListener('mousemove', onDrag);
+        document.removeEventListener('touchmove', onDrag);
+        document.removeEventListener('mouseup', stopDrag);
+        document.removeEventListener('touchend', stopDrag);
+    }
+
+    // Ajouter les écouteurs d'événements pour le début du déplacement
+    cartBtn.addEventListener('mousedown', startDrag);
+    cartBtn.addEventListener('touchstart', startDrag);
+    
+    // Empêcher l'ouverture du panier lors du glissement
+    cartBtn.addEventListener('click', function(e) {
+        if (isDragging) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    });
+    
+    // Style initial pour le bouton panier
+    cartBtn.style.cursor = 'grab';
+});
+// Fonction pour traduire un texte
+function translateText(text) {
+    if (translations[currentLanguage] && translations[currentLanguage][text]) {
+        return translations[currentLanguage][text];
+    }
+    return text;
+}
+
+// Fonction pour traduire un prix
+function translatePrice(price) {
+    if (currentLanguage === 'en') {
+        return price.replace('/mois', '/month');
+    }
+    return price;
+}
+
+// Fonction pour traduire une durée
+function translateDuration(duration) {
+    if (currentLanguage === 'en') {
+        const durationMap = {
+            '1 mois': '1 month',
+            '3 mois': '3 months',
+            '6 mois': '6 months',
+            '12 mois': '12 months'
+        };
+        return durationMap[duration] || duration;
+    }
+    return duration;
 }
