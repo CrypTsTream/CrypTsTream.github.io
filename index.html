@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title data-fr="CrypTsTream - Services d'Abonnement Premium" data-en="CrypTsTream - Premium Subscription Services">CrypTsTream - Services d'Abonnement Premium</title>
     
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDMwQzIzLjczMTUgMzAgMzAgMjMuNzMxNSAzMCAxNkMzMCA4LjI2ODAxIDIzLjczMTUgMiAxNiAyQzguMjY4MDEgMiAyIDguMjY4MDEgMiAxNkMyIDIzLjczMTUgOC4yNjgwMSAzMCAxNiAzMFoiIGZpbGw9IiM2MjRDRkYiLz4KPHBhdGggZD0iTTE2IDI0QzIwLjQxODMgMjQgMjQgMjAuNDE4MyAyNCAxNkMyNCAxMS41ODE3IDIwLjQxODMgOCAxNiA4QzExLjU4MTcgOCA4IDExLjU4MTcgOCAxNkM4IDIwLjQxODMgMTEuNTgxNyAyNCAxNiAyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xOS41IDE2QzE5LjUgMTcuOTMyOSAxNy45MzI5IDE5LjUgMTYgMTkuNUMxNC4wNjcxIDE5LjUgMTIuNSAxNy45MzI5IDEyLjUgMTZDMTIuNSAxNC4wNjcxIDE0LjA2NzEgMTIuNSAxNiAxMi41QzE3LjkzMjkgMTIuNSAxOS41IDE0LjA2NzEgMTkuNSAxNloiIGZpbGw9IiM2MjRDRkYiLz4KPHBhdGggZD0iTTIyIDEwQzIzLjEwNDYgMTAgMjQgMTAuODk1NCAyNCAxMkMyNCAxMy4xMDQ2IDIzLjEwNDYgMTQgMjIgMTRDMjAuODk1NCAxNCAyMCAxMy4xMDQ2IDIwIDEyQzIwIDEwLjg5NTQgMjAuODk1NCAxMCAyMiAxMFoiIGZpbGw9IiM2MjRDRkYiLz4KPC9zdmc+Cg==">
+    
+    <!-- Ressources externes en HTTPS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
+    <div class="logo-container">
+    <!-- SVG Logo alternatif -->
+    <svg class="logo-svg" viewBox="0 0 100 100" xmlns="https://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#624CFF" />
+                <stop offset="100%" stop-color="#3A27CC" />
+            </linearGradient>
+        </defs>
+        <path d="M50 15 L75 30 L75 70 L50 85 L25 70 L25 30 Z" fill="url(#techGradient)" />
+        <circle cx="50" cy="50" r="20" fill="white" />
+        <path d="M45 40 L55 40 L55 60 L45 60 Z" fill="url(#techGradient)" />
+        <path d="M60 45 L70 45 L70 55 L60 55 Z" fill="url(#techGradient)" />
+        <path d="M30 45 L40 45 L40 55 L30 55 Z" fill="url(#techGradient)" />
+    </svg>
+    
+    <!-- Texte du logo -->
     <div class="logo">Cryp<span>Ts</span>Tream</div>
+</div>
 
     <div class="language-toggle">
         <button id="langBtn" onclick="toggleLanguage()">
