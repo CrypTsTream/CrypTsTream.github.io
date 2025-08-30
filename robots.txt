@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cryptstream.github.io/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow specific paths if needed
+# Disallow: /private/
+# Disallow: /admin/
+
+# Allow important resources
+Allow: /style.css
+Allow: /script.js
+Allow: /*.js$
+Allow: /*.css$

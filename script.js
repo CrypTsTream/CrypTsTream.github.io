@@ -1115,3 +1115,11 @@ function translateDuration(duration) {
     }
     return duration;
 }
+// Mettre à jour les traductions spéciales
+    updateSpecialTranslations();
+    
+    // Mettre à jour la meta description
+    updateMetaDescription();
+    
+    // Mettre à jour les prix
+    updatePricesLanguage();
